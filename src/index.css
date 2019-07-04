@@ -1,13 +1,226 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: green;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.horizontal-line {
+  border: 2px solid yellow;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  display: inline-block;
+  text-align: center;
+  margin: 30px;
+  padding: 20px;
+  width: 120px;
+  height: 180px;
+  font-size: 20px;
+  background-color: white;
+  border: solid 1px black;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.card-selected {
+  display: inline-block;
+  text-align: center;
+  margin: 30px;
+  padding: 20px;
+  width: 120px;
+  height: 180px;
+  font-size: 20px;
+  background-color: palevioletred;
+  border: solid 1px black;
+}
+
+.icon {
+  font-size: 48px;
+}
+.black {
+  color: black;
+}
+
+.red {
+  color: red;
+}
+
+.yellow {
+  color: yellow;
+}
+
+#casino-name {
+  text-align: center;
+  margin: 10px;
+}
+
+#pay-table {
+  background-color: blue;
+  color: yellow;
+  text-align: right;
+  font-weight: bold;
+  padding: 0;
+}
+
+table {
+  padding: 2px;
+}
+
+#table-one {
+  background-color: blue;
+  color: yellow;
+  text-align: left;
+  font-weight: bold;
+}
+
+.not-slected {
+  background-color: blue;
+  color: yellowgreen;
+  text-align: right;
+  font-weight: bold;
+}
+
+.paytable-selected {
+  background-color: red;
+  color: yellow;
+  text-align: right;
+  font-weight: bold;
+}
+
+/*.hand-result {
+  color: yellow;
+  font-size: 24px;
+} */
+
+#hand-result {
+  color: yellow;
+  font-size: 24px;
+  font-weight: bold;
+  float: center;
+}
+
+#the-hand {
+  text-align: center;
+  height: 300px;
+}
+
+.discard-btn {
+  font-size: 24px;
+  border: 2px yellow;
+  background-color: blue;
+  color: yellow;
+  margin: 5px;
+}
+
+.discard-btn-selected {
+  font-size: 24px;
+  border: 2px yellow;
+  background-color: red;
+  color: yellow;
+  margin: 5px;
+}
+
+.discard-btn-disabled {
+  font-size: 24px;
+  border: 2px yellow;
+  background-color: gray;
+  color: yellow;
+  margin: 5px;
+}
+
+#help-btn {
+  background-color: white;
+  color: black;
+  font-size: 24px;
+}
+
+#strategy-btn {
+  background-color: powderblue;
+  color: black;
+  font-size: 24px;
+}
+
+.bet-one-btn {
+  background-color: yellow;
+  color: black;
+  font-size: 24px;
+}
+
+.bet-one-btn-disabled {
+  background-color: gray;
+  color: black;
+  font-size: 24px;
+}
+
+#bet-amount {
+  color: yellow;
+  font-size: 24px;
+  font-weight: bold;
+  width: 150px;
+}
+
+.draw-btn {
+  background-color: red;
+  color: black;
+  font-size: 24px;
+  width: 100px;
+}
+
+.draw-btn-clicked {
+  background-color: pink;
+  color: black;
+  font-size: 24px;
+  width: 100px;
+}
+
+#bankroll {
+  color: yellow;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.modal {
+  background-color: white;
+  width: 400px;
+}
+
+#close-modal-button {
+  background-color: red;
+}
+
+.diamonds {
+  color: red;
+}
+
+.hearts {
+  color: red;
+}
+
+.clubs {
+  color: black;
+}
+
+.spades {
+  color: black;
+}
+
+.paytable-hand {
+  text-align: left;
 }
