@@ -1,8 +1,8 @@
 import React from "react";
 import CasinoName from "./CasinoName.js";
 import PayTable from "./PayTable.js";
-// import HelpModal from "./HelpModal.js";
-// import StrategyModal from "./StrategyModal.js";
+import HelpModal from "./HelpModal.js";
+import StrategyModal from "./StrategyModal.js";
 import { generateDeck, shuffleDeck, sortHand } from "./helpers/cardHelpers.js";
 import cardLogic from "./helpers/cardLogic.js";
 import ButtonLine from "./ButtonLine.js";
@@ -15,8 +15,8 @@ class App extends React.Component {
     hand: [],
     betAmount: 1,
     bankroll: 100,
-    // showHelpModal: false,
-    // showStrategyModal: false,
+    showHelpModal: false,
+    showStrategyModal: false,
     showModal: false,
     isFirstDeal: true,
     coinAmounts: [1, 2, 3, 4, 5],
@@ -80,9 +80,18 @@ class App extends React.Component {
     this.dealCards(cardsNeeded, newHand, deck);
   };
 
-  // toggleModal(prevState) {
+  toggleHelpModal = () => {
+    this.setState(
+      prevState => ({
+        showHelpModal: !prevState.showHelpModal
+      }),
+      () => console.log("tsm=", this.state.showHelpModal)
+    );
+  };
+
+  // toggleStrategyModal(prevState) {
   //   this.setState(prevState => {
-  //     showModal: !prevState.showModal;
+  //     showHelpModal: !prevState.showHelpModal;
   //   });
   // }
 
@@ -95,7 +104,6 @@ class App extends React.Component {
       let result = cardLogic(this.state.hand).handValue;
       console.log(result);
       let resultIndex = Object.keys(this.state.payTable).indexOf(result);
-      // let resultIndex = possibleHands.indexOf(result);
       console.log("resultIndex=", resultIndex);
       console.log(
         "Object.values(this.state.payTable)[resultIndex]=",
@@ -143,22 +151,24 @@ class App extends React.Component {
             </div>
           )}
           <hr className="horizontal-line" />
-          {/* <HelpModal
-            showHelpModal={this.state.showHelpModal}
-            showModal={this.state.showModal}
-            isOpen={this.toggleModal}
-            onRequestClose={this.toggleModal}
-          />
-          <StrategyModal
-            showStrategyModal={this.state.showStrategyModal}
-            isOpen={this.toggleModal}
-            onRequestClose={this.toggleModal}
-          /> */}
+
           <CardContainer hand={hand} discardToggle={this.discardToggle} />
         </div>
         <hr className="horizontal-line" />
+
+        <HelpModal
+          showHelpModal={this.state.showHelpModal}
+          toggleHelpModal={this.toggleHelpModal}
+        />
+        {/* <StrategyModal
+          showStrategyModal={this.state.showStrategyModal}
+          toggleHelpModal={this.toggleStrategyModal}
+        /> */}
         <ButtonLine
-          toggleModal={this.toggleModal}
+          // toggleHelpModal={this.toggleStrategyModal}
+          // showsStrategyModal={this.state.showStrategyModal}
+          // toggleHelpModal={this.toggleHelpModal}
+          // showHelpModal={this.state.showHelpModal}
           betOne={this.betOne}
           initialDeal={this.initialDeal}
           discard={this.discard}

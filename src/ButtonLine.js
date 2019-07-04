@@ -1,7 +1,8 @@
 import React from "react";
 
 export default ({
-  toggleModal,
+  toggleHelpModal,
+  toggleStrategyModal,
   betOne,
   betAmount,
   initialDeal,
@@ -11,10 +12,10 @@ export default ({
 }) => (
   <div>
     <div id="buttons" className="flex-container">
-      <button id="help-btn" onClick={toggleModal}>
+      <button id="help-btn" onClick={toggleHelpModal}>
         Help
       </button>
-      <button id="strategy-btn" onClick={toggleModal}>
+      <button id="strategy-btn" onClick={toggleStrategyModal}>
         {/* <button id="strategy-btn" onClick={toggleStrategyModal}> */}
         Strategy
       </button>
@@ -40,3 +41,13 @@ export default ({
     </div>
   </div>
 );
+
+/* <HelpModal
+          showHelpModal={this.state.showHelpModal}
+          toggleHelpModal={this.toggleHelpModal}
+        /> */
+
+/* <StrategyModal
+          showStrategyModal={this.state.showStrategyModal}
+          toggleHelpModal={this.toggleStrategyModal}
+        /> */
