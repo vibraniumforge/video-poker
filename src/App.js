@@ -147,7 +147,11 @@ class App extends React.Component {
             </div>
           )}
           <hr className="horizontal-line" />
-          <CardContainer hand={hand} discardToggle={this.discardToggle} />
+          <CardContainer
+            hand={hand}
+            discardToggle={this.discardToggle}
+            isFirstDeal={isFirstDeal}
+          />
         </div>
         <hr className="horizontal-line" />
         {showHelpModal ? (
