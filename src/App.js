@@ -81,19 +81,16 @@ class App extends React.Component {
   };
 
   toggleHelpModal = () => {
-    this.setState(
-      prevState => ({
-        showHelpModal: !prevState.showHelpModal
-      }),
-      () => console.log("tsm=", this.state.showHelpModal)
-    );
+    this.setState(prevState => ({
+      showHelpModal: !prevState.showHelpModal
+    }));
   };
 
-  // toggleStrategyModal(prevState) {
-  //   this.setState(prevState => {
-  //     showHelpModal: !prevState.showHelpModal;
-  //   });
-  // }
+  toggleStrategyModal = () => {
+    this.setState(prevState => ({
+      showStrategyModal: !prevState.showStrategyModal
+    }));
+  };
 
   updateDeal() {
     this.setState(prevState => ({ isFirstDeal: !prevState.isFirstDeal }));
@@ -130,7 +127,9 @@ class App extends React.Component {
       bankroll,
       isFirstDeal,
       coinAmounts,
-      payTable
+      payTable,
+      showHelpModal,
+      showStrategyModal
     } = this.state;
     // const {showModal} = this.state;
     const showResult = !!hand.length;
@@ -144,31 +143,33 @@ class App extends React.Component {
             coinAmounts={coinAmounts}
             payTable={payTable}
           />
-          {/* <ResultBox betAmount={betAmount} bankroll={bankroll} /> */}
           {showResult && (
             <div id="hand-result">
               {isFirstDeal ? cardLogic(hand).text : null}
             </div>
           )}
           <hr className="horizontal-line" />
-
           <CardContainer hand={hand} discardToggle={this.discardToggle} />
         </div>
         <hr className="horizontal-line" />
-
-        <HelpModal
-          showHelpModal={this.state.showHelpModal}
-          toggleHelpModal={this.toggleHelpModal}
-        />
-        {/* <StrategyModal
-          showStrategyModal={this.state.showStrategyModal}
-          toggleHelpModal={this.toggleStrategyModal}
-        /> */}
+        {showHelpModal ? (
+          <HelpModal
+            className="modal"
+            showHelpModal={this.state.showHelpModal}
+            toggleHelpModal={this.toggleHelpModal}
+          />
+        ) : null}
+        {showStrategyModal ? (
+          <StrategyModal
+            showStrategyModal={this.state.showStrategyModal}
+            toggleStrategyModal={this.toggleStrategyModal}
+          />
+        ) : null}
         <ButtonLine
-          // toggleHelpModal={this.toggleStrategyModal}
-          // showsStrategyModal={this.state.showStrategyModal}
-          // toggleHelpModal={this.toggleHelpModal}
-          // showHelpModal={this.state.showHelpModal}
+          toggleStrategyModal={this.toggleStrategyModal}
+          showsStrategyModal={this.state.showStrategyModal}
+          toggleHelpModal={this.toggleHelpModal}
+          showHelpModal={this.state.showHelpModal}
           betOne={this.betOne}
           initialDeal={this.initialDeal}
           discard={this.discard}

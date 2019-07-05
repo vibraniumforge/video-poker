@@ -16,7 +16,6 @@ export default ({
         Help
       </button>
       <button id="strategy-btn" onClick={toggleStrategyModal}>
-        {/* <button id="strategy-btn" onClick={toggleStrategyModal}> */}
         Strategy
       </button>
       <button
@@ -41,13 +40,3 @@ export default ({
     </div>
   </div>
 );
-
-/* <HelpModal
-          showHelpModal={this.state.showHelpModal}
-          toggleHelpModal={this.toggleHelpModal}
-        /> */
-
-/* <StrategyModal
-          showStrategyModal={this.state.showStrategyModal}
-          toggleHelpModal={this.toggleStrategyModal}
-        /> */

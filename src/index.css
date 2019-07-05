@@ -54,6 +54,7 @@ body {
 .icon {
   font-size: 48px;
 }
+
 .black {
   color: black;
 }
@@ -104,11 +105,6 @@ table {
   font-weight: bold;
 }
 
-/*.hand-result {
-  color: yellow;
-  font-size: 24px;
-} */
-
 #hand-result {
   color: yellow;
   font-size: 24px;
@@ -124,7 +120,7 @@ table {
 .discard-btn {
   font-size: 24px;
   border: 2px yellow;
-  background-color: blue;
+  background-color: red;
   color: yellow;
   margin: 5px;
 }
@@ -132,7 +128,7 @@ table {
 .discard-btn-selected {
   font-size: 24px;
   border: 2px yellow;
-  background-color: red;
+  background-color: blue;
   color: yellow;
   margin: 5px;
 }
@@ -196,10 +192,10 @@ table {
   font-weight: bold;
 }
 
-.modal {
+/* .modal {
   background-color: white;
   width: 400px;
-}
+} */
 
 #close-modal-button {
   background-color: red;
@@ -223,4 +219,31 @@ table {
 
 .paytable-hand {
   text-align: left;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position: fixed;
+  background: white;
+  width: 80%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
 }

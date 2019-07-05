@@ -7,7 +7,7 @@ export default ({ suit, icon, image, discard, discardToggle }) => (
     <br />
     <button
       type="button"
-      className={discard ? "discard-btn" : "discard-btn-selected"}
+      className={discard ? "discard-btn-selected" : "discard-btn"}
       onClick={discardToggle}
     >
       {discard ? "Keep" : "Discard"}
