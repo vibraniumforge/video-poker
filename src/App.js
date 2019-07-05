@@ -7,7 +7,6 @@ import { generateDeck, shuffleDeck, sortHand } from "./helpers/cardHelpers.js";
 import cardLogic from "./helpers/cardLogic.js";
 import ButtonLine from "./ButtonLine.js";
 import CardContainer from "./CardContainer.js";
-// import ResultBox from "./ResultBox";
 
 class App extends React.Component {
   state = {
@@ -17,7 +16,6 @@ class App extends React.Component {
     bankroll: 100,
     showHelpModal: false,
     showStrategyModal: false,
-    showModal: false,
     isFirstDeal: true,
     coinAmounts: [1, 2, 3, 4, 5],
     // prettier-ignore
@@ -35,7 +33,7 @@ class App extends React.Component {
     }
   };
 
-  betOne = () => {
+  incrementBetAmount = () => {
     this.setState(prevState => {
       const betAmount = prevState.betAmount < 5 ? prevState.betAmount + 1 : 1;
       return { betAmount };
@@ -48,18 +46,19 @@ class App extends React.Component {
   };
 
   dealCards = (count, prevHand, prevDeck) => {
-    const newCards = prevDeck.slice(0, count);
-    const deck = prevDeck.slice(count, prevDeck.length);
-    const hand = sortHand([...newCards, ...prevHand]);
-    this.setState(
-      prevState => ({
-        hand,
-        deck
-        // isFirstDeal: !prevState.isFirstDeal
-      }),
-      () => this.judgeHand()
-      // () => this.updateDeal()
-    );
+    const newHand = prevDeck.slice(0, count);
+    const deck = prevDeck.slice(count, 52);
+    const sortedHand = sortHand([...newHand]);
+    this.setState({ hand: sortedHand, deck: deck }, () => this.judgeHand());
+    // this.setState(
+    //   prevState => ({
+    //     newHand,
+    //     deck
+    //     // isFirstDeal: !prevState.isFirstDeal
+    //   }),
+    //   () => this.judgeHand()
+    //   // () => this.updateDeal()
+    // );
   };
 
   discardToggle = discardCard => {
@@ -131,7 +130,6 @@ class App extends React.Component {
       showHelpModal,
       showStrategyModal
     } = this.state;
-    // const {showModal} = this.state;
     const showResult = !!hand.length;
     return (
       <React.Fragment>
@@ -154,7 +152,6 @@ class App extends React.Component {
         <hr className="horizontal-line" />
         {showHelpModal ? (
           <HelpModal
-            className="modal"
             showHelpModal={this.state.showHelpModal}
             toggleHelpModal={this.toggleHelpModal}
           />
@@ -167,10 +164,8 @@ class App extends React.Component {
         ) : null}
         <ButtonLine
           toggleStrategyModal={this.toggleStrategyModal}
-          showsStrategyModal={this.state.showStrategyModal}
           toggleHelpModal={this.toggleHelpModal}
-          showHelpModal={this.state.showHelpModal}
-          betOne={this.betOne}
+          incrementBetAmount={this.incrementBetAmount}
           initialDeal={this.initialDeal}
           discard={this.discard}
           betAmount={betAmount}

@@ -3,10 +3,10 @@ import React from "react";
 export default ({
   toggleHelpModal,
   toggleStrategyModal,
-  betOne,
-  betAmount,
+  incrementBetAmount,
   initialDeal,
   discard,
+  betAmount,
   bankroll,
   isFirstDeal
 }) => (
@@ -21,7 +21,7 @@ export default ({
       <button
         id="bet-one-btn"
         className={isFirstDeal ? "bet-one-btn" : "bet-one-btn-disabled"}
-        onClick={isFirstDeal ? betOne : null}
+        onClick={isFirstDeal ? incrementBetAmount : null}
       >
         Bet One
       </button>
