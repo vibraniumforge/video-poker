@@ -48,7 +48,7 @@ class App extends React.Component {
   dealCards = (count, prevHand, prevDeck) => {
     const newHand = prevDeck.slice(0, count);
     const deck = prevDeck.slice(count, 52);
-    const sortedHand = sortHand([...newHand]);
+    const sortedHand = sortHand([...newHand, ...prevHand]);
     this.setState({ hand: sortedHand, deck: deck }, () => this.judgeHand());
     // this.setState(
     //   prevState => ({
