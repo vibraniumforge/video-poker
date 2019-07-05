@@ -5,6 +5,7 @@ body {
   background-color: green;
   width: 100%;
   overflow-x: hidden;
+  height: 100%;
 }
 
 .horizontal-line {
@@ -52,7 +53,8 @@ body {
 }
 
 .icon {
-  font-size: 48px;
+  font-size: 24px;
+  padding: 5px;
 }
 
 .black {
@@ -77,7 +79,7 @@ body {
   color: yellow;
   text-align: right;
   font-weight: bold;
-  padding: 0;
+  padding: 0px;
 }
 
 table {
