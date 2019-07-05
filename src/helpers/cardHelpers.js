@@ -28,7 +28,10 @@ function generateDeck() {
         image: images[j],
         value: j + 2,
         icon: icons[i],
-        discard: false
+        discard: false,
+        cardFront: `${suits[i]}_${images[j]}.png`,
+        cardBackDark: "back_dark.png",
+        cardBackLight: "back_light.png"
       });
     }
   }

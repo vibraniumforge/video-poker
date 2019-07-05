@@ -8,6 +8,7 @@ export default ({ hand, discardToggle, isFirstDeal }) => (
         key={cardIndex}
         discardToggle={() => discardToggle(card)}
         {...card}
+        card={card}
         isFirstDeal={isFirstDeal}
       />
     ))}
