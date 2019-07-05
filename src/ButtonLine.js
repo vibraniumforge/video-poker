@@ -31,7 +31,7 @@ export default ({
       </span>
       <button
         id="draw-btn"
-        className={isFirstDeal ? "draw-btn" : "draw-btn-clicked"}
+        className={isFirstDeal ? "draw-btn" : "draw-btn-selected"}
         onClick={isFirstDeal ? initialDeal : discard}
       >
         {isFirstDeal ? "Deal" : "Submit"}

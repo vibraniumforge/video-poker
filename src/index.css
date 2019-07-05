@@ -74,6 +74,22 @@ body {
   color: yellow;
 }
 
+.diamonds {
+  color: red;
+}
+
+.hearts {
+  color: red;
+}
+
+.clubs {
+  color: black;
+}
+
+.spades {
+  color: black;
+}
+
 #pay-table {
   background-color: blue;
   color: yellow;
@@ -82,29 +98,17 @@ body {
   padding: 0px;
 }
 
-table {
-  padding: 2px;
-}
-
-#table-one {
-  background-color: blue;
-  color: yellow;
-  text-align: left;
-  font-weight: bold;
-}
-
-.not-slected {
-  background-color: blue;
-  color: yellowgreen;
-  text-align: right;
-  font-weight: bold;
-}
-
 .paytable-selected {
   background-color: red;
   color: yellow;
-  text-align: right;
-  font-weight: bold;
+}
+
+.paytable-not-selected {
+  color: darkkhaki;
+}
+
+.paytable-hand-name {
+  text-align: left;
 }
 
 #hand-result {
@@ -131,14 +135,6 @@ table {
   font-size: 24px;
   border: 2px yellow;
   background-color: blue;
-  color: yellow;
-  margin: 5px;
-}
-
-.discard-btn-disabled {
-  font-size: 24px;
-  border: 2px yellow;
-  background-color: gray;
   color: yellow;
   margin: 5px;
 }
@@ -181,7 +177,7 @@ table {
   width: 100px;
 }
 
-.draw-btn-clicked {
+.draw-btn-selected {
   background-color: pink;
   color: black;
   font-size: 24px;
@@ -194,33 +190,8 @@ table {
   font-weight: bold;
 }
 
-/* .modal {
-  background-color: white;
-  width: 400px;
-} */
-
-#close-modal-button {
+.close-modal-button {
   background-color: red;
-}
-
-.diamonds {
-  color: red;
-}
-
-.hearts {
-  color: red;
-}
-
-.clubs {
-  color: black;
-}
-
-.spades {
-  color: black;
-}
-
-.paytable-hand {
-  text-align: left;
 }
 
 .modal {

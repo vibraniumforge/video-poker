@@ -3,14 +3,18 @@ import React from "react";
 const PayTable = props => {
   const { coinAmounts, payTable, betAmount } = props;
   const Amount = ({ betAmount, baseAmount, amount }) => (
-    <td className={betAmount === amount ? "paytable-selected" : "not-selected"}>
+    <td
+      className={
+        betAmount === amount ? "paytable-selected" : "paytable-not-selected"
+      }
+    >
       {baseAmount * amount}
     </td>
   );
 
   const Row = ({ hand, baseAmount, betAmount }) => (
     <tr>
-      <td className="paytable-hand">{hand}</td>
+      <td className="paytable-hand-name">{hand}</td>
       <Amount
         amount={coinAmounts[0]}
         betAmount={betAmount}
@@ -45,12 +49,12 @@ const PayTable = props => {
       <table>
         <thead>
           <tr>
-            <th className="paytable-hand">Hand</th>
+            <th className="paytable-hand-name">Hand</th>
             <th
               className={
                 betAmount === coinAmounts[0]
                   ? "paytable-selected"
-                  : "not-selected"
+                  : "paytable-not-selected"
               }
             >
               <p>
@@ -61,7 +65,7 @@ const PayTable = props => {
               className={
                 betAmount === coinAmounts[1]
                   ? "paytable-selected"
-                  : "not-selected"
+                  : "paytable-not-selected"
               }
             >
               <p>{coinAmounts[1]} Coins</p>
@@ -70,7 +74,7 @@ const PayTable = props => {
               className={
                 betAmount === coinAmounts[2]
                   ? "paytable-selected"
-                  : "not-selected"
+                  : "paytable-not-selected"
               }
             >
               <p>{coinAmounts[2]} Coins</p>
@@ -79,7 +83,7 @@ const PayTable = props => {
               className={
                 betAmount === coinAmounts[3]
                   ? "paytable-selected"
-                  : "not-selected"
+                  : "paytable-not-selected"
               }
             >
               <p>{coinAmounts[3]} Coins</p>
@@ -88,7 +92,7 @@ const PayTable = props => {
               className={
                 betAmount === coinAmounts[4]
                   ? "paytable-selected"
-                  : "not-selected"
+                  : "paytable-not-selected"
               }
             >
               <p>{coinAmounts[4]} Coins</p>
