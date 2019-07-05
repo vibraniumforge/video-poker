@@ -13,7 +13,7 @@ const Icon = ({ type, color }) => (
 
 export default () => (
   <div id="casino-name">
-    <h1>
+    <h2>
       <Icon type={spade} color="black" />
       <Icon type={heart} color="red" />
       <Icon type={club} color="black" />
@@ -23,6 +23,6 @@ export default () => (
       <Icon type={heart} color="red" />
       <Icon type={club} color="black" />
       <Icon type={diamond} color="red" />
-    </h1>
+    </h2>
   </div>
 );
