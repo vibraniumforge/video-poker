@@ -15,7 +15,7 @@ const StrategyModal = ({
         <p>
           For a strategy tips, please visit the best gambling site.
           <a
-            href="https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/intermediate/"
+            href="https://wizardofodds.com/games/video-poker/strategy/jacks-or-better/9-6/simple/"
             target="_blank"
             rel="noopener noreferrer"
           >
