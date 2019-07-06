@@ -10,16 +10,16 @@ export default ({
   card
 }) => (
   <div className={discard ? "card-selected" : "card"}>
-    <h1 className={suit}>{icon}</h1>
-    <h1 className={suit}>{image}</h1>
-    {/* <img
+    {/* <h1 className={suit}>{icon}</h1>
+    <h1 className={suit}>{image}</h1> */}
+    <img
       src={require(`../playing-cards/${card.cardFront}`)}
       alt={`The ${card.image} of ${card.suit}`}
-    /> */}
+    />
     <br />
     <button
       type="button"
-      // disabled={isFirstDeal === false}
+      disabled={isFirstDeal}
       className={discard ? "discard-btn-selected" : "discard-btn"}
       onClick={discardToggle}
     >
