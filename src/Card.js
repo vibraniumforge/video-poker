@@ -9,12 +9,15 @@ export default ({
   isFirstDeal,
   card
 }) => (
-  <div className={discard ? "card-selected" : "card"}>
+  // <div className={discard ? "card-selected" : "playing-card"}>
+  <div>
+    {/* <div className={discard ? "card-selected" : "card"}> */}
     {/* <h1 className={suit}>{icon}</h1>
     <h1 className={suit}>{image}</h1> */}
     <img
-      src={require(`../playing-cards/${card.cardFront}`)}
+      src={require(`./playing-cards/${card.cardFront}`)}
       alt={`The ${card.image} of ${card.suit}`}
+      className="playing-card"
     />
     <br />
     <button

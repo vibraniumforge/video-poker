@@ -227,3 +227,13 @@ body {
 .display-none {
   display: none;
 }
+
+.playing-card {
+  margin: 30px;
+  padding: 0px;
+  width: 100px;
+  height: 160px;
+  background-color: white;
+  display: inline-block;
+  text-align: center;
+}

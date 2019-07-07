@@ -7,3 +7,5 @@ The player uses the "Discard" buttons to select which, if any, cards are kept.
 That many new cards are drawn.
 The hand is compared to the pay table.
 The result is shown to the user.
+
+Playing card images from: https://github.com/hayeah/playing-cards-assets

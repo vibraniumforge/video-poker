@@ -29,7 +29,10 @@ function generateDeck() {
         value: j + 2,
         icon: icons[i],
         discard: false,
-        cardFront: `${suits[i]}_${images[j]}.png`,
+        cardFront:
+          j + 2 > 10
+            ? `${names[j].toLowerCase()}_of_${suits[i]}.png`
+            : `${images[j]}_of_${suits[i]}.png`,
         cardBackDark: "back_dark.png",
         cardBackLight: "back_light.png"
       });
