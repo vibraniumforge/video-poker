@@ -74,8 +74,8 @@ class App extends React.Component {
 
   discard = () => {
     const { deck, hand } = this.state;
-    let newHand = hand.filter(card => !card.discard);
-    let cardsNeeded = 5 - newHand.length;
+    const newHand = hand.filter(card => !card.discard);
+    const cardsNeeded = 5 - newHand.length;
     this.dealCards(cardsNeeded, newHand, deck);
   };
 
@@ -97,15 +97,15 @@ class App extends React.Component {
 
   judgeHand = () => {
     if (!this.state.isFirstDeal) {
-      let result = cardLogic(this.state.hand).handValue;
+      const result = cardLogic(this.state.hand).handValue;
       console.log(result);
-      let resultIndex = Object.keys(this.state.payTable).indexOf(result);
+      const resultIndex = Object.keys(this.state.payTable).indexOf(result);
       console.log("resultIndex=", resultIndex);
       console.log(
         "Object.values(this.state.payTable)[resultIndex]=",
         Object.values(this.state.payTable)[resultIndex]
       );
-      let overallResult = Object.values(this.state.payTable)[resultIndex];
+      const overallResult = Object.values(this.state.payTable)[resultIndex];
       console.log("overallResult=", overallResult);
       console.log("t.s.b=", this.state.bankroll);
       this.setState(

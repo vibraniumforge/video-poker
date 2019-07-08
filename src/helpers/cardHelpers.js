@@ -33,8 +33,7 @@ function generateDeck() {
           j + 2 > 10
             ? `${names[j].toLowerCase()}_of_${suits[i]}.png`
             : `${images[j]}_of_${suits[i]}.png`,
-        cardBackDark: "back_dark.png",
-        cardBackLight: "back_light.png"
+        cardBack: "back.png"
       });
     }
   }
@@ -44,9 +43,9 @@ function generateDeck() {
 function shuffleDeck(deck) {
   // Using Fisher-Yates algo
   for (let i = 0; i < 2000; i++) {
-    let index1 = Math.floor(Math.random() * 52);
-    let index2 = Math.floor(Math.random() * 52);
-    let temp = deck[index1];
+    const index1 = Math.floor(Math.random() * 52);
+    const index2 = Math.floor(Math.random() * 52);
+    const temp = deck[index1];
     deck[index1] = deck[index2];
     deck[index2] = temp;
   }
@@ -55,9 +54,7 @@ function shuffleDeck(deck) {
 
 function sortHand(hand) {
   return hand.sort(function(a, b) {
-    if (a.value > b.value) return 1;
-    else if (a.value < b.value) return -1;
-    return 0;
+    return a.value - b.value;
   });
 }
 
