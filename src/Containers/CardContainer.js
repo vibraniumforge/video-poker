@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./Card.js";
+import Card from "../Components/Card.js";
 
 export default ({ hand, discardToggle, isFirstDeal }) => (
   <div id="the-hand" className="flex-container">

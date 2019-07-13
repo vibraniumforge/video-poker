@@ -1,12 +1,12 @@
 import React from "react";
-import CasinoName from "./CasinoName.js";
-import PayTable from "./PayTable.js";
-import HelpModal from "./HelpModal.js";
-import StrategyModal from "./StrategyModal.js";
+import CasinoName from "./Components/CasinoName.js";
+import PayTable from "./Components/PayTable.js";
+import HelpModal from "./Components/HelpModal.js";
+import StrategyModal from "./Components/StrategyModal.js";
 import { generateDeck, shuffleDeck, sortHand } from "./helpers/cardHelpers.js";
 import cardLogic from "./helpers/cardLogic.js";
-import ButtonLine from "./ButtonLine.js";
-import CardContainer from "./CardContainer.js";
+import ButtonLine from "./Components/ButtonLine.js";
+import CardContainer from "./Containers/CardContainer.js";
 
 class App extends React.Component {
   state = {
