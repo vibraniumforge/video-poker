@@ -1,11 +1,12 @@
 import React from "react";
 import Card from "../Components/Card.js";
 
-export default ({ hand, discardToggle, isFirstDeal }) => (
+const CardContainer =({hand, discardToggle, isFirstDeal}) => {
+  return (
   <div id="the-hand" className="flex-container">
-    {hand.map((card, cardIndex) => (
+    {hand.map((card) => (
       <Card
-        key={cardIndex}
+        key={card.id}
         discardToggle={() => discardToggle(card)}
         {...card}
         card={card}
@@ -13,4 +14,8 @@ export default ({ hand, discardToggle, isFirstDeal }) => (
       />
     ))}
   </div>
-);
+  )
+}
+
+
+export default CardContainer
