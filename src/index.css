@@ -25,6 +25,7 @@ body {
   flex-flow: row wrap;
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
+  align-content: center;
 }
 
 .card {
@@ -95,6 +96,11 @@ body {
   text-align: right;
   font-weight: bold;
   padding: 0px;
+  flex:50%;
+}
+
+.hidden {
+  visibility:none;
 }
 
 .paytable-selected {
@@ -115,6 +121,7 @@ body {
   font-size: 24px;
   font-weight: bold;
   float: center;
+  flex:50%;
 }
 
 #the-hand {
@@ -153,7 +160,7 @@ body {
 }
 
 #strategy-btn {
-  background-color: powderblue;
+  background-color: orange;
   color: black;
   font-size: 24px;
 }
@@ -174,7 +181,7 @@ body {
   color: yellow;
   font-size: 24px;
   font-weight: bold;
-  width: 150px;
+  /* width: 150px; */
 }
 
 .draw-btn {

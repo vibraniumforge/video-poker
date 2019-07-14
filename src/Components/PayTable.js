@@ -1,7 +1,21 @@
 import React from "react";
 
 const PayTable = props => {
-  const { coinAmounts, payTable, betAmount } = props;
+  const coinAmounts= [1, 2, 3, 4, 5]
+  // prettier-ignore
+  const payTable= {
+    "Royal Flush": 800,
+    "Straight Flush": 50,
+    "4 of a Kind": 25,
+    "Full House": 9,
+    "Flush": 6,
+    "Straight": 4,
+    "3 of a Kind": 3,
+    "Two Pairs": 2,
+    "One Pair - Jacks or Better": 1,
+    "Nothing": -1
+  }
+  const { betAmount } = props;
   const Amount = ({ betAmount, baseAmount, amount }) => (
     <td
       className={

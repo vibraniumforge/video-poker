@@ -7,8 +7,24 @@ import { generateDeck, shuffleDeck, sortHand } from "./helpers/cardHelpers.js";
 import cardLogic from "./helpers/cardLogic.js";
 import ButtonLine from "./Components/ButtonLine.js";
 import CardContainer from "./Containers/CardContainer.js";
+import Result from "./Components/Result.js"
 
-class App extends React.Component {
+
+// prettier-ignore
+const payTable= {
+  "Royal Flush": 800,
+  "Straight Flush": 50,
+  "4 of a Kind": 25,
+  "Full House": 9,
+  "Flush": 6,
+  "Straight": 4,
+  "3 of a Kind": 3,
+  "Two Pairs": 2,
+  "One Pair - Jacks or Better": 1,
+  "Nothing": -1
+}
+
+class App extends React.PureComponent {
   state = {
     deck: [],
     hand: [],
@@ -17,20 +33,6 @@ class App extends React.Component {
     showHelpModal: false,
     showStrategyModal: false,
     isFirstDeal: true,
-    coinAmounts: [1, 2, 3, 4, 5],
-    // prettier-ignore
-    payTable: {
-      "Royal Flush": 800,
-      "Straight Flush": 50,
-      "4 of a Kind": 25,
-      "Full House": 9,
-      "Flush": 6,
-      "Straight": 4,
-      "3 of a Kind": 3,
-      "Two Pairs": 2,
-      "One Pair - Jacks or Better": 1,
-      "Nothing": -1
-    }
   };
 
   incrementBetAmount = () => {
@@ -99,13 +101,13 @@ class App extends React.Component {
     if (!this.state.isFirstDeal) {
       const result = cardLogic(this.state.hand).handValue;
       console.log(result);
-      const resultIndex = Object.keys(this.state.payTable).indexOf(result);
+      const resultIndex = Object.keys(payTable).indexOf(result);
       console.log("resultIndex=", resultIndex);
       console.log(
         "Object.values(this.state.payTable)[resultIndex]=",
-        Object.values(this.state.payTable)[resultIndex]
+        Object.values(payTable)[resultIndex]
       );
-      const overallResult = Object.values(this.state.payTable)[resultIndex];
+      const overallResult = Object.values(payTable)[resultIndex];
       console.log("overallResult=", overallResult);
       console.log("t.s.b=", this.state.bankroll);
       this.setState(
@@ -125,8 +127,6 @@ class App extends React.Component {
       hand,
       bankroll,
       isFirstDeal,
-      coinAmounts,
-      payTable,
       showHelpModal,
       showStrategyModal
     } = this.state;
@@ -138,14 +138,8 @@ class App extends React.Component {
         <div id="top" className="flex-container">
           <PayTable
             betAmount={betAmount}
-            coinAmounts={coinAmounts}
-            payTable={payTable}
           />
-          {showResult && (
-            <div id="hand-result">
-              {isFirstDeal ? cardLogic(hand).text : null}
-            </div>
-          )}
+          <Result showResult={showResult} isFirstDeal={isFirstDeal} hand={hand}/>
           <hr className="horizontal-line" />
           <CardContainer
             hand={hand}
