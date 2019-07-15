@@ -2,15 +2,14 @@ import React from "react";
 
 const StrategyModal = ({
   showStrategyModal,
-  toggleStrategyModal,
-  children
+  toggleModal
 }) => {
   const showHideClassName = showStrategyModal
     ? "modal display-block"
     : "modal display-none";
 
   return (
-    <div className={showHideClassName}>
+    <div className={showHideClassName} name="showStrategyModal">
       <section className="modal-main">
         <p>
           For a strategy tips, please visit the best gambling site.
@@ -24,8 +23,9 @@ const StrategyModal = ({
         </p>
         <button
           type="button"
+          name="showStrategyModal"
           className="close-modal-button"
-          onClick={toggleStrategyModal}
+          onClick={toggleModal}
         >
           close
         </button>

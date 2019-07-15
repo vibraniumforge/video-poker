@@ -5,11 +5,11 @@
 
 #### App
 - [x] paytable and coin amounts - if they don't change they aren't state
-- [] what is increment bet amount logic
+- [x] what is increment bet amount logic
 - [] get rid of initial deal method, generate deck on component mount if possible
 - [] can you move deal logic and judge hand to card helpers so componnets are only presentational
-- [] multiple toggle modal functions is repetitive
-  - [] can you combine logic with a dynamic modal name arg
+- [x] multiple toggle modal functions is repetitive
+  - [x] can you combine logic with a dynamic modal name arg
 - [] judge hand is too long, remove some logs
   - [] why are you using index of in an object, can't you just use the keys
 - [] nested logic for hand-result necessary?
@@ -46,6 +46,7 @@
 - [x] redo to functional components
 - [x] pure components
 - [x] fix right div
+- [ ] Async card loading
 - [ ] Add video via quicktime
 - [ ] Fix height 
 - [ ] Add a video

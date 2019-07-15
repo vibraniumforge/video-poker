@@ -1,12 +1,12 @@
 import React from "react";
 
-const HelpModal = ({ showHelpModal, toggleHelpModal, children }) => {
+const HelpModal = ({ showHelpModal, toggleModal }) => {
   const showHideClassName = showHelpModal
     ? "modal display-block"
     : "modal display-none";
 
   return (
-    <div className={showHideClassName}>
+    <div className={showHideClassName} >
       <section className="modal-main">
         <p>
           To play, choose a value between 1 and 5 with the Bet One button. The
@@ -18,8 +18,9 @@ const HelpModal = ({ showHelpModal, toggleHelpModal, children }) => {
         </p>
         <button
           type="button"
+          name= "showHelpModal"
           className="close-modal-button"
-          onClick={toggleHelpModal}
+          onClick={toggleModal}
         >
           close
         </button>

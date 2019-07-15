@@ -81,17 +81,10 @@ class App extends React.PureComponent {
     this.dealCards(cardsNeeded, newHand, deck);
   };
 
-  toggleHelpModal = () => {
-    this.setState(prevState => ({
-      showHelpModal: !prevState.showHelpModal
-    }));
-  };
-
-  toggleStrategyModal = () => {
-    this.setState(prevState => ({
-      showStrategyModal: !prevState.showStrategyModal
-    }));
-  };
+  toggleModal =(event)=> {
+    const name = event.target.name
+    this.setState(prevState=>({[name]: !prevState[name]}))
+  }
 
   updateDeal() {
     this.setState(prevState => ({ isFirstDeal: !prevState.isFirstDeal }));
@@ -151,18 +144,21 @@ class App extends React.PureComponent {
         {showHelpModal ? (
           <HelpModal
             showHelpModal={this.state.showHelpModal}
-            toggleHelpModal={this.toggleHelpModal}
+            // toggleHelpModal={this.toggleHelpModal}
+            toggleModal={this.toggleModal}
           />
         ) : null}
         {showStrategyModal ? (
           <StrategyModal
             showStrategyModal={this.state.showStrategyModal}
-            toggleStrategyModal={this.toggleStrategyModal}
+            // toggleStrategyModal={this.toggleStrategyModal}
+            toggleModal={this.toggleModal}
           />
         ) : null}
         <ButtonLine
-          toggleStrategyModal={this.toggleStrategyModal}
-          toggleHelpModal={this.toggleHelpModal}
+          // toggleStrategyModal={this.toggleStrategyModal}
+          // toggleHelpModal={this.toggleHelpModal}
+          toggleModal={this.toggleModal}
           incrementBetAmount={this.incrementBetAmount}
           initialDeal={this.initialDeal}
           discard={this.discard}
