@@ -91,16 +91,17 @@ class App extends React.PureComponent {
   }
 
   judgeHand = () => {
-    if (!this.state.isFirstDeal) {
+
       const result = cardLogic(this.state.hand).handValue;
       console.log(result);
       const resultIndex = Object.keys(payTable).indexOf(result);
       console.log("resultIndex=", resultIndex);
       console.log(
-        "Object.values(this.state.payTable)[resultIndex]=",
+        "Object.values(payTable)[resultIndex]=",
         Object.values(payTable)[resultIndex]
       );
-      const overallResult = Object.values(payTable)[resultIndex];
+      // const overallResult = Object.values(payTable)[resultIndex];
+      const overallResult = payTable[result]
       console.log("overallResult=", overallResult);
       console.log("t.s.b=", this.state.bankroll);
       this.setState(
@@ -110,7 +111,7 @@ class App extends React.PureComponent {
         () => console.log("t.s.b=", this.state.bankroll),
         () => console.log("++++++++++++++++++++++++++++++++")
       );
-    }
+    
     this.updateDeal();
   };
 

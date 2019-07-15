@@ -11,7 +11,7 @@
 - [x] multiple toggle modal functions is repetitive
   - [x] can you combine logic with a dynamic modal name arg
 - [] judge hand is too long, remove some logs
-  - [] why are you using index of in an object, can't you just use the keys
+  - [x] why are you using index of in an object, can't you just use the keys
 - [] nested logic for hand-result necessary?
 
 #### ButtonLine/Card
@@ -22,10 +22,10 @@
 - [] returning text and hand value seems repetitive
 
 #### CardHelpers
-- [x] sorthand should be able to sort with one value minus the other in one line. revisit js sort
+- [x] sortHand should be able to sort with one value minus the other in one line. revisit js sort
 
 #### Paytable
-- [] why do you repeat the same code over and over. if you repeat something three ore more times, you need to dry it up
+- [] why do you repeat the same code over and over. if you repeat something three or more times, you need to dry it up
 
 #### CSS
 - [] break css into sections
