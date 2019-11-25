@@ -9,3 +9,5 @@ The hand is compared to the pay table.
 The result is shown to the user.
 
 Playing card images from: https://github.com/hayeah/playing-cards-assets
+
+See it on GitPages: https://vibraniumforge.github.io/video-poker/
