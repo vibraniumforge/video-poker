@@ -52,15 +52,6 @@ class App extends React.PureComponent {
     const deck = prevDeck.slice(count, 52);
     const sortedHand = sortHand([...newHand, ...prevHand]);
     this.setState({ hand: sortedHand, deck: deck }, () => this.judgeHand());
-    // this.setState(
-    //   prevState => ({
-    //     newHand,
-    //     deck
-    //     // isFirstDeal: !prevState.isFirstDeal
-    //   }),
-    //   () => this.judgeHand()
-    //   // () => this.updateDeal()
-    // );
   };
 
   discardToggle = discardCard => {
@@ -73,6 +64,9 @@ class App extends React.PureComponent {
     });
     this.setState({ hand });
   };
+
+  // refactor this one
+
 
   discard = () => {
     const { deck, hand } = this.state;
@@ -91,27 +85,13 @@ class App extends React.PureComponent {
   }
 
   judgeHand = () => {
-
-      const result = cardLogic(this.state.hand).handValue;
-      console.log(result);
-      const resultIndex = Object.keys(payTable).indexOf(result);
-      console.log("resultIndex=", resultIndex);
-      console.log(
-        "Object.values(payTable)[resultIndex]=",
-        Object.values(payTable)[resultIndex]
-      );
-      // const overallResult = Object.values(payTable)[resultIndex];
-      const overallResult = payTable[result]
-      console.log("overallResult=", overallResult);
-      console.log("t.s.b=", this.state.bankroll);
-      this.setState(
-        prevState => ({
-          bankroll: prevState.bankroll + overallResult * this.state.betAmount
-        }),
-        () => console.log("t.s.b=", this.state.bankroll),
-        () => console.log("++++++++++++++++++++++++++++++++")
-      );
-    
+    const result = cardLogic(this.state.hand).handValue;
+    const overallResult = payTable[result]
+    this.setState(
+      prevState => ({
+        bankroll: prevState.bankroll + overallResult * this.state.betAmount
+      })
+    );
     this.updateDeal();
   };
 
