@@ -17,5 +17,4 @@ const CardContainer =({hand, discardToggle, isFirstDeal}) => {
   )
 }
 
-
 export default CardContainer
