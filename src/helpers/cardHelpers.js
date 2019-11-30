@@ -18,7 +18,7 @@ const images = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"];
 const suits = ["clubs", "diamonds", "hearts", "spades", ];
 const icons = ["♣", "♦", "♥", "♠", ];
 
-function generateDeck() {
+const generateDeck =() =>{
   let deck = [];
   let counter = 0
   for (let i = 0; i < suits.length; i++) {
@@ -42,7 +42,7 @@ function generateDeck() {
   return deck;
 }
 
-function shuffleDeck(deck) {
+const shuffleDeck =(deck)=> {
   // Using Fisher-Yates algo
   for (let i = 0; i < 2000; i++) {
     const index1 = Math.floor(Math.random() * 52);
@@ -54,10 +54,8 @@ function shuffleDeck(deck) {
   return deck;
 }
 
-function sortHand(hand) {
-  return hand.sort(function(a, b) {
-    return a.value - b.value;
-  });
+ const sortHand=(hand) =>{
+  return hand.sort((a, b) =>  a.value - b.value);
 }
 
 export { generateDeck, shuffleDeck, sortHand };
