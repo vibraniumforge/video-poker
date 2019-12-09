@@ -1,7 +1,6 @@
 import React from "react";
 
-const ButtonLine =({
-
+const ButtonLine = ({
   // toggleHelpModal,
   // toggleStrategyModal,
   toggleModal,
@@ -10,13 +9,19 @@ const ButtonLine =({
   discard,
   betAmount,
   bankroll,
-  isFirstDeal}) => {
-    return (<div>
+  isFirstDeal
+}) => {
+  return (
+    <div>
       <div id="buttons" className="flex-container">
-        <button id="help-btn" name= "showHelpModal" onClick={toggleModal}>
+        <button id="help-btn" name="showHelpModal" onClick={toggleModal}>
           Help
         </button>
-        <button id="strategy-btn" name="showStrategyModal" onClick={toggleModal}>
+        <button
+          id="strategy-btn"
+          name="showStrategyModal"
+          onClick={toggleModal}
+        >
           Strategy
         </button>
         <button
@@ -41,12 +46,9 @@ const ButtonLine =({
       </div>
     </div>
   );
-}
+};
 
-export default ButtonLine
-
-
-
+export default ButtonLine;
 
 // export default ({
 //   toggleHelpModal,
